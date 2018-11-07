@@ -20,14 +20,20 @@ void setup() {
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+  Firebase.setFloat("maximum", 5);//temp
   maxn = Firebase.getInt("maximum");
 }
 void loop(){
+
 	int password[maxn];
 	for (int i = 0; i < maxn; i++)
 	{
 		String passNum = String(i);
 		password[i]= Firebase.getFloat(passNum);
 	}
-
+	for (int i = 0; i < maxn; i++)
+	{
+		Serial.println(password[i]);
+	}
+	
 }
