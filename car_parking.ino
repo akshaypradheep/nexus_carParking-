@@ -24,6 +24,10 @@ void setup() {
 }
 void loop(){
 	int password[maxn];
-	
+	for (int i = 0; i < maxn; i++)
+	{
+		String passNum = String(i);
+		password[i]= Firebase.getFloat(passNum);
+	}
 
 }
