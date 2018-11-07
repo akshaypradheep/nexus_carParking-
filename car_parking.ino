@@ -4,6 +4,8 @@
 #define FIREBASE_AUTH "vfUtznfQTNsjBnwNw5VTrNEldJVydp5CgNMfTjk5"
 #define WIFI_SSID "NodeNet"
 #define WIFI_PASSWORD "nodemcu8266"
+int maxn;
+
 
 void setup() {
   Serial.begin(9600);
@@ -18,10 +20,10 @@ void setup() {
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
-  int maxn = Firebase.getInt("maximum");
-  int password[maxn];
+  maxn = Firebase.getInt("maximum");
 }
 void loop(){
+	int password[maxn];
 	
 
 }
